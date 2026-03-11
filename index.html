@@ -39,7 +39,7 @@
         <li>
          <a>যোগাযোগ</a>
         </li>
-        <li><a>কার্ট</a></li>
+        <li><a id="cartTextDrop">কার্ট <span>0</span></a></li>
       </ul>
     </div>
     <div class="logo flex items-center gap-2">
@@ -53,14 +53,14 @@
       <li>
         <a>যোগাযোগ</a>
       </li>
-      <li><a id="cartText">কার্ট</a></li>
+      <li><a id="cartText">কার্ট <span id="cartcount">0</span></a></li>
     </ul>
   </div>
   <div class="navbar-end">
     <label class="input mr-2">
-  <input type="search" required placeholder="Search" />
+  <input id="searchproduct" type="search" required placeholder="Search" />
 </label>
-    <a class="btn btn-ghost Bangla-font bg-[#469642] font-semibold text-white">খুজুন</a>
+    <a onclick="searchValue()" class="btn btn-ghost Bangla-font bg-[#469642] font-semibold text-white">খুজুন</a>
   </div>
 </div>
     </section>
