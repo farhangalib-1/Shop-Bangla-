@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Daisy UI -->
+     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Show Bangla</title>
+    <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+    .English-font{
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+.Bangla-font {
+  font-family: "Hind Siliguri", sans-serif;
+  font-style: normal;
+}
+    </style>
+</head>
+<body class="English-font">
+    <section class="NavBar">
+        <div class="navbar bg-base-100 shadow-sm">
+  <div class="navbar-start">
+    <div class="dropdown">
+      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+      </div>
+      <ul
+        tabindex="-1"
+        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+        <li><a>পণ্য</a></li>
+        <li>
+         <a>যোগাযোগ</a>
+        </li>
+        <li><a>কার্ট</a></li>
+      </ul>
+    </div>
+    <div class="logo flex items-center gap-2">
+        <div class="image"><img class="w-10  h-10" src="assets/logo.png" alt=""></div>
+    <a class="font-bold text-[24px]"><span class="text-[#2b6e44]">Shop</span> <span class="Bangla-font text-[#51a646]"> বাংলা</span></a>
+    </div>
+  </div>
+  <div class="navbar-center hidden lg:flex">
+    <ul class="menu menu-horizontal px-1 Bangla-font text-[18px] space-x-32">
+      <li><a>পণ্য</a></li>
+      <li>
+        <a>যোগাযোগ</a>
+      </li>
+      <li><a>কার্ট</a></li>
+    </ul>
+  </div>
+  <div class="navbar-end">
+    <a class="btn btn-ghost Bangla-font bg-[#469642] font-semibold text-white">খুজুন</a>
+  </div>
+</div>
+    </section>
+    <section class="hero-section flex items-center justify-between bg-[#ffffff] ml-7">
+        <div class="leftcontents Bangla-font">
+            <h1 class="text-7xl font-semibold mb-4">বাংলার সেরা <br> <span class="text-[#51a646]">অনলাইন মার্কেট</span></h1>
+            <p>আপনার প্রয়োজনীয় জিনিস পত্র কিনুন যখন তখন</p>
+            <p class="mb-4">সেরা দামে কিনুন আপনার নিত্যপ্রয়োজনীয় জিনিস</p>
+            <button class="btn bg-[#469642] text-white">এখনই কেনাকাটা করুন</button>
+            <button class="btn btn-outline text-[#51a646]">অফার দেখুন</button>
+        </div>
+        <div class="rightcontents">
+          <img class="w-5xl h-5xl" src="assets/hero-bg.png" alt="">
+        </div>
+    </section>
+</body>
+</html>
