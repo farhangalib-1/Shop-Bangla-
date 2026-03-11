@@ -21,6 +21,9 @@
   font-family: "Hind Siliguri", sans-serif;
   font-style: normal;
 }
+.add-mt{
+  margin-top: 30px;
+}
     </style>
 </head>
 <body class="English-font">
@@ -35,7 +38,7 @@
       <ul
         tabindex="-1"
         class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-        <li><a>পণ্য</a></li>
+        <li><a id="productlist1">পণ্য</a></li>
         <li>
          <a>যোগাযোগ</a>
         </li>
@@ -49,7 +52,7 @@
   </div>
   <div class="navbar-center hidden lg:flex">
     <ul class="menu menu-horizontal px-1 Bangla-font text-[18px] space-x-32">
-      <li><a>পণ্য</a></li>
+      <li><a id="productlist">পণ্য</a></li>
       <li>
         <a>যোগাযোগ</a>
       </li>
@@ -58,28 +61,28 @@
   </div>
   <div class="navbar-end">
     <label class="input mr-2">
-  <input id="searchproduct" type="search" required placeholder="Search" />
+  <input id="searchproduct" type="search" required placeholder="বাংলায় সার্চ করুন" />
 </label>
     <a onclick="searchValue()" class="btn btn-ghost Bangla-font bg-[#469642] font-semibold text-white">খুজুন</a>
   </div>
 </div>
     </section>
-    <section class="hero-section flex flex-col-reverse md:flex-row items-center md:justify-between bg-[#ffffff] ">
+    <section id="hero" class="hero-section flex flex-col-reverse md:flex-row items-center md:justify-between bg-[#ffffff] ">
         <div class="leftcontents Bangla-font text-center md:ml-7">
             <h1 class="text-5xl md:text-7xl font-semibold mb-4 ">বাংলার সেরা <br> <span class="text-[#51a646]">অনলাইন মার্কেট</span></h1>
             <p>আপনার প্রয়োজনীয় জিনিস পত্র কিনুন যখন তখন</p>
             <p class="mb-4">সেরা দামে কিনুন আপনার নিত্যপ্রয়োজনীয় জিনিস</p>
-            <button class="btn bg-[#469642] text-white">এখনই কেনাকাটা করুন</button>
+            <button onclick="buy()" class="btn bg-[#469642] text-white">এখনই কেনাকাটা করুন</button>
             <button class="btn btn-outline text-[#51a646]">অফার দেখুন</button>
         </div>
         <div class="rightcontents">
           <img class=" md:w-2xl md:h-2xl" src="assets/hero-bg.png" alt="">
         </div>
     </section>
-    <section class="allproducts-section mt-60">
+    <section id="allproductlist" class="allproducts-section mt-60">
         <h1 class="Bangla-font text-4xl md:text-6xl text-center font-semibold">নিত্য প্রয়োজনীয় সব সামগ্রী</h1>
+        <h1 id="noproduct" class="col-span-full text-4xl Bangla-font font-black text-center hidden mt-7">কোনো পণ্য পাওয়া যায় নি</h1>
          <div id="displayproducts" class="allproducts grid grid-cols-1 md:grid-cols-4 gap-5 mt-9 mx-7 text-center">
-         
         </div>
     </section>
     </main>

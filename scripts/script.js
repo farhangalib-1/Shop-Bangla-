@@ -34,9 +34,7 @@ const loadProduct = ()=>{
      cart2.classList.add('text-[#469642]')
    
     }
-    
   loadProduct();
-
   const searchValue=()=>{
    const url = './scripts/product.json'
        fetch(url)
@@ -49,6 +47,13 @@ const loadProduct = ()=>{
       el.name.toLowerCase().includes(searchProduct.toLowerCase()))
       const displayProducts = document.getElementById('displayproducts')
       displayProducts.innerHTML = ' '
+
+      if(filterData.length === 0){
+      
+        const noProduct = document.querySelector('#noproduct')
+        noProduct.classList.remove('hidden')
+        
+      }
       for(let data of filterData){
          const div = document.createElement('div')
          
@@ -67,3 +72,12 @@ const loadProduct = ()=>{
            
       }
   }
+
+  document.getElementById('productlist').addEventListener('click', ()=>{
+      document.getElementById('hero').classList.add('hidden')
+      document.getElementById('allproductlist').classList.add('add-mt') 
+  })
+  document.getElementById('productlist1').addEventListener('click', ()=>{
+    document.getElementById('hero').classList.add('hidden')
+    document.getElementById('allproductlist').classList.add('add-mt') 
+  })
