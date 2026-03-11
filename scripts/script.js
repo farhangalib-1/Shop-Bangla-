@@ -48,12 +48,14 @@ const loadProduct = ()=>{
       const displayProducts = document.getElementById('displayproducts')
       displayProducts.innerHTML = ' '
 
+    const noProduct = document.querySelector('#noproduct')
       if(filterData.length === 0){
-      
-        const noProduct = document.querySelector('#noproduct')
         noProduct.classList.remove('hidden')
-        
       }
+      else{
+        noProduct.classList.add('hidden')
+      }
+       
       for(let data of filterData){
          const div = document.createElement('div')
          
