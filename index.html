@@ -53,7 +53,7 @@
       <li>
         <a>যোগাযোগ</a>
       </li>
-      <li><a>কার্ট</a></li>
+      <li><a id="cartText">কার্ট</a></li>
     </ul>
   </div>
   <div class="navbar-end">
@@ -78,55 +78,8 @@
     </section>
     <section class="allproducts-section mt-60">
         <h1 class="Bangla-font text-4xl md:text-6xl text-center font-semibold">নিত্য প্রয়োজনীয় সব সামগ্রী</h1>
-        <div class="allproducts grid grid-cols-1 md:grid-cols-4 gap-5 mt-9 mx-7 text-center">
-          <div class="products rounded-2xl shadow-sm">
-            <div class="product-image inline-block"><img class="w-60 h-60" src="assets/radhuni-haleem-mix-200-gm.jpg" alt=""></div>
-            <h2 class="Bangla-font text-2xl font-semibold mt-3">রাধুনি হালিম মিক্স ২০০ গ্রাম</h2>
-            <p class="Bangla-font text-xl font-semibold mt-2">৳ ৭০ <span>প্রতি পিস</span></p>
-            <button class="btn bg-[#469642] text-white mt-3 rounded-full hover:text-[#469642] hover:bg-white mb-7">কার্টে যোগ করুন</button>
-          </div>
-           <div class="products rounded-2xl shadow-sm">
-            <div class="product-image inline-block"><img class="w-60 h-60" src="assets/egg.jpg" alt=""></div>
-            <h2 class="Bangla-font text-2xl font-semibold mt-3">ডিম</h2>
-            <p class="Bangla-font text-xl font-semibold mt-2">৳ ৪০ <span>প্রতি হালি</span></p>
-            <button class="btn bg-[#469642] text-white mt-3  rounded-full hover:text-[#469642] hover:bg-white mb-7">কার্টে যোগ করুন</button>
-          </div>
-           <div class="products rounded-2xl shadow-sm">
-            <div class="product-image inline-block"><img class="w-60 h-60" src="assets/surf-excel-washing-powder-1-kg.jpg" alt=""></div>
-            <h2 class="Bangla-font text-2xl font-semibold mt-3">সার্ফেক্সসেল ১ কিলোগ্রাম</h2>
-            <p class="Bangla-font text-xl font-semibold mt-2">৳ ১৯৯ <span>প্রতি পিস</span></p>
-            <button class="btn bg-[#469642] text-white mt-3 rounded-full hover:text-[#469642] hover:bg-white mb-7">কার্টে যোগ করুন</button>
-          </div>
-          <div class="products rounded-2xl shadow-sm">
-            <div class="product-image inline-block"><img class="w-60 h-60" src="assets/colgate.jpg" alt=""></div>
-            <h2 class="Bangla-font text-2xl font-semibold mt-3">কলগেট</h2>
-            <p class="Bangla-font text-xl font-semibold mt-2">৳ ১৯৪ <span>প্রতি পিস</span></p>
-            <button class="btn bg-[#469642] text-white mt-3 rounded-full hover:text-[#469642] hover:bg-white mb-7">কার্টে যোগ করুন</button>
-          </div>
-            <div class="products rounded-2xl shadow-sm">
-            <div class="product-image inline-block"><img class="w-60 h-60" src="assets/molla-salt.jpg" alt=""></div>
-            <h2 class="Bangla-font text-2xl font-semibold mt-3">মল্লা লবণ ৫০০ গ্রাম</h2>
-            <p class="Bangla-font text-xl font-semibold mt-2">৳ ২২ <span>প্রতি পিস</span></p>
-            <button class="btn bg-[#469642] text-white mt-3 rounded-full hover:text-[#469642] hover:bg-white mb-7">কার্টে যোগ করুন</button>
-          </div>
-          <div class="products rounded-2xl shadow-sm">
-            <div class="product-image inline-block"><img class="w-60 h-60" src="assets/fresh soyabean oil.jpg" alt=""></div>
-            <h2 class="Bangla-font text-2xl font-semibold mt-3">ফ্রেশ সয়াবিন ওয়ান ৫ লিটার</h2>
-            <p class="Bangla-font text-xl font-semibold mt-2">৳ ৯৯৫ <span>প্রতি পিস</span></p>
-            <button class="btn bg-[#469642] text-white mt-3 rounded-full hover:text-[#469642] hover:bg-white mb-7">কার্টে যোগ করুন</button>
-          </div>
-          <div class="products rounded-2xl shadow-sm">
-            <div class="product-image inline-block"><img class="w-60 h-60" src="assets/nutella.jpg" alt=""></div>
-            <h2 class="Bangla-font text-2xl font-semibold mt-3">নিউটেলা ৭৫০ গ্রাম</h2>
-            <p class="Bangla-font text-xl font-semibold mt-2">৳ ২৩২৫ <span>প্রতি পিস</span></p>
-            <button class="btn bg-[#469642] text-white mt-3 rounded-full hover:text-[#469642] hover:bg-white mb-7">কার্টে যোগ করুন</button>
-          </div>
-          <div class="products rounded-2xl shadow-sm">
-            <div class="product-image inline-block"><img class="w-60 h-60" src="assets/domex.jpg" alt=""></div>
-            <h2 class="Bangla-font text-2xl font-semibold mt-3">ডোমেক্স</h2>
-            <p class="Bangla-font text-xl font-semibold mt-2">৳ ১১৫ <span>প্রতি পিস</span></p>
-            <button class="btn bg-[#469642] text-white mt-3 rounded-full hover:text-[#469642] hover:bg-white mb-7">কার্টে যোগ করুন</button>
-          </div>
+         <div id="displayproducts" class="allproducts grid grid-cols-1 md:grid-cols-4 gap-5 mt-9 mx-7 text-center">
+         
         </div>
     </section>
     </main>
@@ -166,5 +119,6 @@
     </div>
   </nav>
 </footer>
+<script src="scripts/script.js"></script>
 </body>
 </html>

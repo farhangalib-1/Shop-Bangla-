@@ -1,0 +1,114 @@
+[
+  {
+    "id": 1,
+    "name": "রাধুনি হালিম মিক্স ২০০ গ্রাম",
+    "price": 70,
+    "unit": "প্রতি পিস",
+    "image": "assets/radhuni-haleem-mix-200-gm.jpg"
+  },
+  {
+    "id": 2,
+    "name": "ডিম",
+    "price": 40,
+    "unit": "প্রতি হালি",
+    "image": "assets/egg.jpg"
+  },
+  {
+    "id": 3,
+    "name": "সার্ফেক্সসেল ১ কিলোগ্রাম",
+    "price": 199,
+    "unit": "প্রতি পিস",
+    "image": "assets/surf-excel-washing-powder-1-kg.jpg"
+  },
+  {
+    "id": 4,
+    "name": "কলগেট",
+    "price": 194,
+    "unit": "প্রতি পিস",
+    "image": "assets/colgate.jpg"
+  },
+  {
+    "id": 5,
+    "name": "মল্লা লবণ ৫০০ গ্রাম",
+    "price": 22,
+    "unit": "প্রতি পিস",
+    "image": "assets/molla-salt.jpg"
+  },
+  {
+    "id": 6,
+    "name": "ফ্রেশ সয়াবিন ওয়ান ৫ লিটার",
+    "price": 995,
+    "unit": "প্রতি পিস",
+    "image": "assets/fresh soyabean oil.jpg"
+  },
+  {
+    "id": 7,
+    "name": "নিউটেলা ৭৫০ গ্রাম",
+    "price": 2325,
+    "unit": "প্রতি পিস",
+    "image": "assets/nutella.jpg"
+  },
+  {
+    "id": 8,
+    "name": "ডোমেক্স",
+    "price": 115,
+    "unit": "প্রতি পিস",
+    "image": "assets/domex.jpg"
+  },
+  {
+    "id": 9,
+    "name": "রাধুনী গুড়া মরিচ",
+    "price": 160,
+    "unit": "প্রতি পিস",
+    "image": "assets/radhuni-chilli-morich-powder-jar-200-gm.jpg"
+  },
+  {
+    "id": 10,
+    "name": "রাধুনী হলুদের গুড়া ৫০০ গ্রাম",
+    "price": 335,
+    "unit": "প্রতি পিস",
+    "image": "assets/radhuni-turmeric-holud-powder-500-gm.jpg"
+  },
+  {
+    "id": 11,
+    "name": "বসুন্ধরা আটা ২ কেজি",
+    "price": 130,
+    "unit": "প্রতি পিস",
+    "image": "assets/bashundhara-flour-atta-2-kg.jpg"
+  },
+  {
+    "id": 12,
+    "name": "এসিআই পিউস সুজি ৫০০ গ্রাম",
+    "price": 48,
+    "unit": "প্রতি পিস",
+    "image": "assets/aci-pure-suji-500-gm.jpg"
+  },
+  {
+    "id": 13,
+    "name": "অলেম্পিক লাচ্ছা সেমাই ২০০ গ্রাম",
+    "price": 48,
+    "unit": "প্রতি পিস",
+    "image": "assets/olympic-lascha-shemai-200-gm.jpg"
+  },
+  {
+    "id": 14,
+    "name": "ডানো মিল্ক পাউডার ১০০০ গ্রাম",
+    "price": 950,
+    "unit": "প্রতি পিস",
+    "image": "assets/dano-daily-pushti-milk-powder-1-kg.jpg"
+  },
+  {
+    "id": 15,
+    "name": "নিডো মিল্ক পাউডার ৭০০ গ্রাম",
+    "price": 810,
+    "unit": "প্রতি পিস",
+    "image": "assets/nestle-nido-fortigrow-full-cream-milk-powder-700-gm.jpg"
+  },
+  {
+    "id": 16,
+    "name": "ম্যাগী মাসলা নুডুলস ১৬ প্যাক ৯৯২ গ্রাম",
+    "price": 339,
+    "unit": "প্রতি পিস",
+    "image": "assets/maggi noddles.jpg"
+  }
+]
