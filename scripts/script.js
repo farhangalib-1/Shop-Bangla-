@@ -8,10 +8,10 @@ const loadProduct = ()=>{
          const div = document.createElement('div')
          const displayProducts = document.getElementById('displayproducts')
          div.innerHTML = `
-         <div class="products rounded-2xl shadow-sm h-full">
-            <div class="product-image inline-block"><img class="w-60 h-60" src="${data.image}" alt=""></div>
-            <h2 class="Bangla-font text-2xl font-semibold mt-3">${data.name}</h2>
-            <p class="Bangla-font text-xl font-semibold mt-2">৳ ${data.price} <span>${data.unit}</span></p>
+         <div onclick="products(event)" class="products rounded-2xl shadow-sm h-full">
+            <div class="product-image product-image inline-block"><img class="w-60 h-60" src="${data.image}" alt=""></div>
+            <h2 class="product-name Bangla-font text-2xl font-semibold mt-3">${data.name}</h2>
+            <p class="product-price Bangla-font text-xl font-semibold mt-2">৳ ${data.price} <span class="unit">${data.unit}</span></p>
             <button id="btn-${data.id}" onclick="addCart('btn-${data.id}')" class="cartbtn btn bg-[#469642] text-white mt-3 rounded-full hover:text-[#469642] hover:bg-white mb-7">কার্টে যোগ করুন</button>
           </div>
          `
@@ -83,3 +83,15 @@ const loadProduct = ()=>{
     document.getElementById('hero').classList.add('hidden')
     document.getElementById('allproductlist').classList.add('add-mt') 
   })
+
+  const products = (event)=>{
+    const parentNode = event.target.parentNode.parentNode
+    const productImage = parentNode.querySelector('.product-image')
+    const productName = parentNode.querySelector('.product-name')
+    const productPrice = parentNode.querySelector('.product-price')
+    const productUnit = parentNode.querySelector('.productPrice')
+    console.log(productImage, productName, productPrice,productUnit);
+    
+    
+    
+  }
