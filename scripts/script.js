@@ -130,3 +130,12 @@ const loadProduct = ()=>{
       cart.classList.remove('hidden')
     })
 
+    document.getElementById('logo').addEventListener('click' ,()=>{
+      const hero = document.getElementById('hero')
+      const allProduct = document.getElementById('allproductlist')
+      const cart = document.getElementById('cart')
+      hero.classList.remove('hidden')
+      allProduct.classList.remove('hidden')
+      cart.classList.add('hidden')
+      
+    })
