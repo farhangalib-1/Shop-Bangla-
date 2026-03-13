@@ -88,7 +88,7 @@
     <section id="cart" class="cart-product">
       <div class="text mt-50">
           <h1 class="text-center text-5xl Bangla-font font-semibold"> কোনো প্রোডাক্ট সিলেক্ট করা হয় নি </h1>
-          <div class="totalproducts grid grid-cols-1 md:grid-cols-2">
+          <div class="totalproducts grid grid-cols-1 md:grid-cols-2 items-center">
             <div class="leftside ml-8">
               <img class="w-40 h-40 shadow-sm rounded-2xl mb-3" src="assets/radhuni-haleem-mix-200-gm.jpg" alt="">
               <h1 class="font-semibold Bangla-font text-2xl">রাধুনী হালিম মিক্স ২০০ গ্রাম</h1>
@@ -98,11 +98,20 @@
                     <h1 id="totaladd" class="mx-4">1</h1>
                      <button onclick="add()" class="btn join-item rounded-r-2xl bg-[#d7fcd5]">+</button>
                   </div>
-              
-
             </div>
-            <div class="rightside border">
-
+            <div class="rightside shadow rounded-2xl bg-gray-50 p-10 space-y-3">
+              <h1 class="text-4xl font-semibold Bangla-font text-center">বিলের বিবরণ ও ঠিকানা </h1>
+              <input required class="block p-2 rounded-lg w-full" type="text" name="name" id="name" placeholder="আপনার পুরো নাম লিখুন">
+              <input required class="block p-2 rounded-lg w-full" type="text" name="phone" id="phone" placeholder="আপনার মোবাইল নাম্বার লিখুন"> 
+              <input required class="block p-2 rounded-lg w-full" type="text" name="text" id="address" placeholder="আপনার ঠিকানা লিখুন">
+              <input required class="block p-2 rounded-lg w-full" type="text" name="text" id="thana" placeholder="আপনার থানা/উপজেলা লিখুন">
+              <input required class="block p-2 rounded-lg w-full" type="text" name="district" id="district" placeholder="আপনার জেলা লিখুন">
+              <hr class="my-10 border-gray-300">
+              <h1 class="text-4xl font-semibold Bangla-font text-center">মোট খরচ</h1>
+              <h1 class="text-3xl Bangla-font text-center">পণ্যের মূল্যঃ <span id="productprice">70</span> টাকা</h1>
+              <h1  class="text-3xl Bangla-font text-center">ডিলিভারী চার্জঃ <span id="delivarycharge">150</span> টাকা</h1>
+              <h1  class="text-3xl Bangla-font text-center">মোট মূল্যঃ <span id="totalprice"></span> টাকা</h1>
+              <input class="btn w-full text-white bg-[#51a646]" type="submit" value="Order">
             </div>
           </div>
           </div>

@@ -163,3 +163,11 @@ const loadProduct = ()=>{
       totalCartProduct.innerText = currentCount  
       
     }
+
+    const productPrice = document.getElementById('productprice').innerText
+    const delivaryPrice = document.getElementById('delivarycharge').innerText
+    const totalPrice = document.getElementById('totalprice')
+
+    const currentPrice = parseInt(productPrice) + parseInt(delivaryPrice) 
+  totalPrice.innerText = currentPrice
+    
