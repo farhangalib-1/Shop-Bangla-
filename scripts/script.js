@@ -1,3 +1,5 @@
+const totalProducts = []
+
 const loadProduct = ()=>{
        const url = './scripts/product.json'
        fetch(url)
@@ -77,21 +79,54 @@ const loadProduct = ()=>{
 
   document.getElementById('productlist').addEventListener('click', ()=>{
       document.getElementById('hero').classList.add('hidden')
+      document.getElementById('allproductlist').classList.remove('hidden') 
       document.getElementById('allproductlist').classList.add('add-mt') 
+      const cart = document.getElementById('cart')
+      cart.classList.add('hidden')
   })
   document.getElementById('productlist1').addEventListener('click', ()=>{
     document.getElementById('hero').classList.add('hidden')
-    document.getElementById('allproductlist').classList.add('add-mt') 
+      document.getElementById('allproductlist').classList.remove('hidden') 
+      document.getElementById('allproductlist').classList.add('add-mt') 
+      const cart = document.getElementById('cart')
+      cart.classList.add('hidden') 
   })
 
+
   const products = (event)=>{
-    const parentNode = event.target.parentNode.parentNode
+    const parentNode = event.currentTarget
     const productImage = parentNode.querySelector('.product-image')
-    const productName = parentNode.querySelector('.product-name')
-    const productPrice = parentNode.querySelector('.product-price')
-    const productUnit = parentNode.querySelector('.productPrice')
-    console.log(productImage, productName, productPrice,productUnit);
+    const productName = parentNode.querySelector('.product-name').innerText
+    const productPrice = parentNode.querySelector('.product-price').innerText
+    const cartBtn = parentNode.querySelector('.cartbtn')
     
-    
-    
+    const productInfo = {
+      productImage,
+      productName,
+      productPrice
+    }
+
+
+    const productExist = totalProducts.find(el=> el.productName === productInfo.productName)
+    if(!productExist){
+      totalProducts.push(productInfo)
+    }
   }
+
+    document.getElementById('cartText').addEventListener('click', ()=>{
+      const hero = document.getElementById('hero')
+      const allProduct = document.getElementById('allproductlist')
+      const cart = document.getElementById('cart')
+      hero.classList.add('hidden')
+      allProduct.classList.add('hidden')
+      cart.classList.remove('hidden')
+    })
+      document.getElementById('cartTextDrop').addEventListener('click', ()=>{
+      const hero = document.getElementById('hero')
+      const allProduct = document.getElementById('allproductlist')
+      const cart = document.getElementById('cart')
+      hero.classList.add('hidden')
+      allProduct.classList.add('hidden')
+      cart.classList.remove('hidden')
+    })
+
