@@ -110,6 +110,10 @@ const loadProduct = ()=>{
     if(!productExist){
       totalProducts.push(productInfo)
     }
+    const countProduct = document.getElementById('cartcount')
+    countProduct.innerText = totalProducts.length
+    const countProduct1 = document.getElementById('cartTextDropCount')
+    countProduct1.innerText = totalProducts.length
     renderProduct()
   }
 
