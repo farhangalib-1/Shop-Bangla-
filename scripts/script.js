@@ -26,8 +26,7 @@ const loadProduct = ()=>{
       const newBtn = document.createElement('button')
       const cart = document.getElementById('cartText')
       const cart2 = document.getElementById('cartTextDrop')
-      let cartcount = document.getElementById('cartcount').innerText
-      let totalCount = Number(cartcount)
+
       newBtn.innerHTML = `
       <button id="btn-${id}" onclick="addCart('btn-${id}')" class="cartbtn btn text-[#469642] bg-white mt-3 rounded-full hover:text-[#469642] hover:bg-white mb-7 border border-[#469642]">কার্টে সফলভাবে যুক্ত হয়েছে</button>
       `
@@ -111,6 +110,7 @@ const loadProduct = ()=>{
     if(!productExist){
       totalProducts.push(productInfo)
     }
+    renderProduct()
   }
 
     document.getElementById('cartText').addEventListener('click', ()=>{
@@ -139,3 +139,27 @@ const loadProduct = ()=>{
       cart.classList.add('hidden')
       
     })
+
+    const renderProduct = ()=>{
+      for(let product of totalProducts){
+        console.log(product);
+        
+      }
+    }
+    
+    let totalCartProduct = document.getElementById('totaladd')
+    let currentCount = parseInt(document.getElementById('totaladd').innerText)
+    const remove = ()=>{
+      if(currentCount>1){
+        currentCount = currentCount -1
+        totalCartProduct.innerText = currentCount  
+      }
+      else{
+        return
+      }
+    }
+    const add = ()=>{
+      currentCount = currentCount +1
+      totalCartProduct.innerText = currentCount  
+      
+    }

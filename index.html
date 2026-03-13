@@ -85,9 +85,26 @@
          <div id="displayproducts" class="allproducts grid grid-cols-1 md:grid-cols-4 gap-5 mt-9 mx-7 text-center">
         </div>
     </section>
-    <section id="cart" class="cart-product hidden">
+    <section id="cart" class="cart-product">
       <div class="text mt-50">
           <h1 class="text-center text-5xl Bangla-font font-semibold"> কোনো প্রোডাক্ট সিলেক্ট করা হয় নি </h1>
+          <div class="totalproducts grid grid-cols-1 md:grid-cols-2">
+            <div class="leftside ml-8">
+              <img class="w-40 h-40 shadow-sm rounded-2xl mb-3" src="assets/radhuni-haleem-mix-200-gm.jpg" alt="">
+              <h1 class="font-semibold Bangla-font text-2xl">রাধুনী হালিম মিক্স ২০০ গ্রাম</h1>
+              <h1 class="font-semibold Bangla-font text-lg">৳ 70 প্রতি পিস</h1>
+              <div class="join join-horizontal flex items-center border border-gray-100 w-fit rounded-2xl">
+                <button onclick="remove()" class="btn  join-item rounded-l-2xl bg-[#d7fcd5]">-</button>
+                    <h1 id="totaladd" class="mx-4">1</h1>
+                     <button onclick="add()" class="btn join-item rounded-r-2xl bg-[#d7fcd5]">+</button>
+                  </div>
+              
+
+            </div>
+            <div class="rightside border">
+
+            </div>
+          </div>
           </div>
     </section>
     </main>
