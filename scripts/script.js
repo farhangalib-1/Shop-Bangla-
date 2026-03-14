@@ -95,7 +95,7 @@ const loadProduct = ()=>{
 
   const products = (event)=>{
     if(event.target.classList.contains('cartbtn')){
-       const parentNode = event.currentTarget
+    const parentNode = event.currentTarget
     const productImage = parentNode.querySelector('.product-image')
     const productName = parentNode.querySelector('.product-name').innerText
     const productPrice = parentNode.querySelector('.product-price').innerText
@@ -120,9 +120,8 @@ const loadProduct = ()=>{
    document.getElementById('allcartproduct').classList.remove('hidden')
    document.getElementById('cartproductlist').classList.add('add-mt')
     renderProduct()
-    }
-   
   }
+}
 
     document.getElementById('cartText').addEventListener('click', ()=>{
       const hero = document.getElementById('hero')
@@ -151,13 +150,7 @@ const loadProduct = ()=>{
       
     })
 
-    const renderProduct = ()=>{
-      for(let product of totalProducts){
-       console.log(product);
-       
-        
-      }
-    }
+   
 
     const productPrice = document.getElementById('productprice').innerText
     const delivaryPrice = document.getElementById('delivarycharge').innerText
@@ -166,7 +159,35 @@ const loadProduct = ()=>{
      const currentPrice = parseInt(productPrice)*parseInt(totalAdd) + parseInt(delivaryPrice) 
         totalPrice.innerText = currentPrice
    
-    let totalCartProduct = document.getElementById('totaladd')
+    
+
+    const renderProduct = ()=>{
+  const cartContainer = document.getElementById('leftsidecart')
+  cartContainer.innerHTML = ''
+
+  for(let product of totalProducts){
+    console.log(product);
+    
+    const div = document.createElement('div')
+
+    div.innerHTML = `
+          ${product.productImage.outerHTML}
+              <h1 class="font-semibold Bangla-font text-2xl">${product.productName}</h1>
+              <h1 class="font-semibold Bangla-font text-lg">${product.productPrice}</h1>
+              <div class="join join-horizontal flex items-center border border-gray-100 w-fit rounded-2xl">
+                <button onclick="remove()" class="btn  join-item rounded-l-2xl bg-[#d7fcd5]">-</button>
+                    <h1 id="totaladd" class="mx-4">1</h1>
+                     <button onclick="add()" class="btn join-item rounded-r-2xl bg-[#d7fcd5]">+</button>
+    `
+
+    cartContainer.appendChild(div)
+  }
+}
+    
+
+
+
+let totalCartProduct = document.getElementById('totaladd')
     let currentCount = parseInt(document.getElementById('totaladd').innerText)
     const remove = ()=>{
       if(currentCount>1){
@@ -193,6 +214,3 @@ const loadProduct = ()=>{
       totalCartProduct.innerText = currentCount  
       
     }
-
-    
-    
