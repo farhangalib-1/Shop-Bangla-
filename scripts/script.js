@@ -91,9 +91,11 @@ const loadProduct = ()=>{
       cart.classList.add('hidden') 
   })
 
+  
 
   const products = (event)=>{
-    const parentNode = event.currentTarget
+    if(event.target.classList.contains('cartbtn')){
+       const parentNode = event.currentTarget
     const productImage = parentNode.querySelector('.product-image')
     const productName = parentNode.querySelector('.product-name').innerText
     const productPrice = parentNode.querySelector('.product-price').innerText
@@ -114,7 +116,12 @@ const loadProduct = ()=>{
     countProduct.innerText = totalProducts.length
     const countProduct1 = document.getElementById('cartTextDropCount')
     countProduct1.innerText = totalProducts.length
+   document.getElementById('notProductadd').classList.add('hidden')
+   document.getElementById('allcartproduct').classList.remove('hidden')
+   document.getElementById('cartproductlist').classList.add('add-mt')
     renderProduct()
+    }
+   
   }
 
     document.getElementById('cartText').addEventListener('click', ()=>{
@@ -146,7 +153,8 @@ const loadProduct = ()=>{
 
     const renderProduct = ()=>{
       for(let product of totalProducts){
-        console.log(product);
+       console.log(product);
+       
         
       }
     }
