@@ -150,28 +150,41 @@ const loadProduct = ()=>{
         
       }
     }
-    
+
+    const productPrice = document.getElementById('productprice').innerText
+    const delivaryPrice = document.getElementById('delivarycharge').innerText
+    const totalAdd = document.getElementById('totaladd').innerText
+    const totalPrice = document.getElementById('totalprice')
+     const currentPrice = parseInt(productPrice)*parseInt(totalAdd) + parseInt(delivaryPrice) 
+        totalPrice.innerText = currentPrice
+   
     let totalCartProduct = document.getElementById('totaladd')
     let currentCount = parseInt(document.getElementById('totaladd').innerText)
     const remove = ()=>{
       if(currentCount>1){
+        let totalAddProduct = 1
         currentCount = currentCount -1
         totalCartProduct.innerText = currentCount  
+        totalAddProduct = currentCount
+         const currentPrice = parseInt(productPrice)*totalAddProduct + parseInt(delivaryPrice) 
+        totalPrice.innerText = currentPrice
+    
       }
       else{
         return
       }
     }
     const add = ()=>{
+      let totalAddProduct = 1
+      console.log(totalAddProduct);
+      
       currentCount = currentCount +1
+      totalAddProduct = currentCount
+      const currentPrice = parseInt(productPrice)*totalAddProduct + parseInt(delivaryPrice) 
+      totalPrice.innerText = currentPrice
       totalCartProduct.innerText = currentCount  
       
     }
 
-    const productPrice = document.getElementById('productprice').innerText
-    const delivaryPrice = document.getElementById('delivarycharge').innerText
-    const totalPrice = document.getElementById('totalprice')
-
-    const currentPrice = parseInt(productPrice) + parseInt(delivaryPrice) 
-  totalPrice.innerText = currentPrice
+    
     
