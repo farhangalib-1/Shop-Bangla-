@@ -1,5 +1,4 @@
 const totalProducts = []
-
 const loadProduct = ()=>{
        const url = './scripts/product.json'
        fetch(url)
@@ -13,7 +12,7 @@ const loadProduct = ()=>{
          <div onclick="products(event)" class="products rounded-2xl shadow-sm h-full">
             <div class="product-image product-image inline-block"><img class="w-60 h-60" src="${data.image}" alt=""></div>
             <h2 class="product-name Bangla-font text-2xl font-semibold mt-3">${data.name}</h2>
-            <p class="product-price Bangla-font text-xl font-semibold mt-2">৳ ${data.price} <span class="unit">${data.unit}</span></p>
+            <p class="Bangla-font text-xl font-semibold mt-2"><span class="product-price">৳ ${data.price}</span>  <span class="unit">${data.unit}</span></p>
             <button id="btn-${data.id}" onclick="addCart('btn-${data.id}')" class="cartbtn btn bg-[#469642] text-white mt-3 rounded-full hover:text-[#469642] hover:bg-white mb-7">কার্টে যোগ করুন</button>
           </div>
          `
@@ -36,6 +35,7 @@ const loadProduct = ()=>{
    
     }
   loadProduct();
+
   const searchValue=()=>{
    const url = './scripts/product.json'
        fetch(url)
@@ -65,7 +65,7 @@ const loadProduct = ()=>{
          <div class="products rounded-2xl shadow-sm h-full">
             <div class="product-image inline-block"><img class="w-60 h-60" src="${data.image}" alt=""></div>
             <h2 class="Bangla-font text-2xl font-semibold mt-3">${data.name}</h2>
-            <p class="Bangla-font text-xl font-semibold mt-2">৳ ${data.price} <span>${data.unit}</span></p>
+            <p class="Bangla-font text-xl font-semibold mt-2"><span class="product-price">৳ ${data.price}</span> <span>${data.unit}</span></p>
             <button id="btn-${data.id}" onclick="addCart('btn-${data.id}')" class="cartbtn btn bg-[#469642] text-white mt-3 rounded-full hover:text-[#469642] hover:bg-white mb-7">কার্টে যোগ করুন</button>
           </div>
          `
@@ -100,6 +100,8 @@ const loadProduct = ()=>{
     const productName = parentNode.querySelector('.product-name').innerText
     const productPrice = parentNode.querySelector('.product-price').innerText
     const cartBtn = parentNode.querySelector('.cartbtn')
+    console.log(productPrice);
+    
     
     const productInfo = {
       productImage,
@@ -120,6 +122,7 @@ const loadProduct = ()=>{
    document.getElementById('allcartproduct').classList.remove('hidden')
    document.getElementById('cartproductlist').classList.add('add-mt')
     renderProduct()
+    calculateTotalPrice()
   }
 }
 
@@ -166,27 +169,29 @@ const loadProduct = ()=>{
   cartContainer.innerHTML = ''
 
   for(let product of totalProducts){
-    console.log(product);
     
     const div = document.createElement('div')
 
     div.innerHTML = `
+    <div class="rounded-2xl shadow p-6">
           ${product.productImage.outerHTML}
               <h1 class="font-semibold Bangla-font text-2xl">${product.productName}</h1>
-              <h1 class="font-semibold Bangla-font text-lg">${product.productPrice}</h1>
+              <h1 id="allproductprice" class="font-semibold Bangla-font text-lg">${product.productPrice}</h1>
               <div class="join join-horizontal flex items-center border border-gray-100 w-fit rounded-2xl">
                 <button onclick="remove()" class="btn  join-item rounded-l-2xl bg-[#d7fcd5]">-</button>
                     <h1 id="totaladd" class="mx-4">1</h1>
                      <button onclick="add()" class="btn join-item rounded-r-2xl bg-[#d7fcd5]">+</button>
+                </div>
+                </div>
     `
 
     cartContainer.appendChild(div)
   }
 }
     
-
-
-
+  let allProductPrice = document.getElementById('allproductprice')
+ 
+    
 let totalCartProduct = document.getElementById('totaladd')
     let currentCount = parseInt(document.getElementById('totaladd').innerText)
     const remove = ()=>{
@@ -205,7 +210,6 @@ let totalCartProduct = document.getElementById('totaladd')
     }
     const add = ()=>{
       let totalAddProduct = 1
-      console.log(totalAddProduct);
       
       currentCount = currentCount +1
       totalAddProduct = currentCount
@@ -214,3 +218,19 @@ let totalCartProduct = document.getElementById('totaladd')
       totalCartProduct.innerText = currentCount  
       
     }
+
+const calculateTotalPrice = () => {
+
+  let total = 0
+
+  for(let product of totalProducts){
+    const price = parseInt(product.productPrice.replace(/[^\d]/g,''))
+
+    total += price
+  }
+
+  const deliveryCharge = parseInt(document.getElementById('delivarycharge').innerText)
+  document.getElementById('productprice').innerText = total
+  document.getElementById('totalprice').innerText = total + deliveryCharge
+}
+
