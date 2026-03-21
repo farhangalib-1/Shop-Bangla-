@@ -67,7 +67,7 @@ const loadProduct = ()=>{
          
           
          div.innerHTML = `
-         <div id=${data.id} onclick="{products(event)}" class="products rounded-2xl shadow-sm h-full">
+         <div id=${data.id} onclick="products(event)" class="products rounded-2xl shadow-sm h-full">
             <div class="product-image inline-block"><img class="w-60 h-60" src="${data.image}" alt=""></div>
             <h2 class="product-name Bangla-font text-2xl font-semibold mt-3">${data.name}</h2>
             <p class="Bangla-font text-xl font-semibold mt-2"><span class="product-price">৳ ${data.price}</span> <span>${data.unit}</span></p>
@@ -147,14 +147,23 @@ const loadProduct = ()=>{
     document.getElementById('allcartproduct').classList.remove('hidden')
   }
     })
-      document.getElementById('cartTextDrop').addEventListener('click', ()=>{
+    document.getElementById('cartTextDrop').addEventListener('click', ()=>{
       const hero = document.getElementById('hero')
       const allProduct = document.getElementById('allproductlist')
       const cart = document.getElementById('cart')
+      const noProduct = document.getElementById('notProductadd')
       hero.classList.add('hidden')
       allProduct.classList.add('hidden')
       cart.classList.remove('hidden')
+      if (totalProducts.length === 0) {
+    noProduct.classList.remove('hidden')
+    document.getElementById('allcartproduct').classList.add('hidden')
+  } else {
+    noProduct.classList.add('hidden')
+    document.getElementById('allcartproduct').classList.remove('hidden')
+  }
     })
+
 
     document.getElementById('logo').addEventListener('click' ,()=>{
       const hero = document.getElementById('hero')
