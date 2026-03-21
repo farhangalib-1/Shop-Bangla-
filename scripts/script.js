@@ -43,6 +43,11 @@ const loadProduct = ()=>{
        .then(data=>searchProducts(data))
 
       const searchProducts = (datas)=>{
+        const hero = document.getElementById('hero')
+        hero.classList.add('hidden')
+        hero.classList.add('add-mt')
+        document.getElementById('allcartproduct').classList.add('hidden')
+        
          const searchProduct = document.getElementById('searchproduct').value
          const filterData = datas.filter(el =>
       el.name.toLowerCase().includes(searchProduct.toLowerCase()))
@@ -62,9 +67,9 @@ const loadProduct = ()=>{
          
           
          div.innerHTML = `
-         <div id=${data.id} onclick="products(event)" class="products rounded-2xl shadow-sm h-full">
+         <div id=${data.id} onclick="{products(event)}" class="products rounded-2xl shadow-sm h-full">
             <div class="product-image inline-block"><img class="w-60 h-60" src="${data.image}" alt=""></div>
-            <h2 class="Bangla-font text-2xl font-semibold mt-3">${data.name}</h2>
+            <h2 class="product-name Bangla-font text-2xl font-semibold mt-3">${data.name}</h2>
             <p class="Bangla-font text-xl font-semibold mt-2"><span class="product-price">৳ ${data.price}</span> <span>${data.unit}</span></p>
             <button id="btn-${data.id}" onclick="addCart('btn-${data.id}')" class="cartbtn btn bg-[#469642] text-white mt-3 rounded-full hover:text-[#469642] hover:bg-white mb-7">কার্টে যোগ করুন</button>
           </div>
@@ -119,9 +124,6 @@ const loadProduct = ()=>{
     countProduct.innerText = totalProducts.length
     const countProduct1 = document.getElementById('cartTextDropCount')
     countProduct1.innerText = totalProducts.length
-   document.getElementById('notProductadd').classList.add('hidden')
-   document.getElementById('allcartproduct').classList.remove('hidden')
-   document.getElementById('cartproductlist').classList.add('add-mt')
    
     renderProduct()
     calculateTotalPrice()
@@ -133,9 +135,17 @@ const loadProduct = ()=>{
       const hero = document.getElementById('hero')
       const allProduct = document.getElementById('allproductlist')
       const cart = document.getElementById('cart')
+      const noProduct = document.getElementById('notProductadd')
       hero.classList.add('hidden')
       allProduct.classList.add('hidden')
       cart.classList.remove('hidden')
+      if (totalProducts.length === 0) {
+    noProduct.classList.remove('hidden')
+    document.getElementById('allcartproduct').classList.add('hidden')
+  } else {
+    noProduct.classList.add('hidden')
+    document.getElementById('allcartproduct').classList.remove('hidden')
+  }
     })
       document.getElementById('cartTextDrop').addEventListener('click', ()=>{
       const hero = document.getElementById('hero')
@@ -169,7 +179,9 @@ const loadProduct = ()=>{
   const renderProduct = ()=>{
   const cartContainer = document.getElementById('leftsidecart')
   cartContainer.innerHTML = ''
-
+  
+ 
+   
   for(let product of totalProducts){
 
     
@@ -190,33 +202,6 @@ const loadProduct = ()=>{
   let allProductPrice = document.getElementById('allproductprice')
  
     
-// let totalCartProduct = document.getElementById('totaladd')
-//     let currentCount = parseInt(document.getElementById('totaladd').innerText)
-//     const remove = ()=>{
-//       if(currentCount>1){
-//         let totalAddProduct = 1
-//         currentCount = currentCount -1
-//         totalCartProduct.innerText = currentCount  
-//         totalAddProduct = currentCount
-//          const currentPrice = parseInt(productPrice)*totalAddProduct + parseInt(delivaryPrice) 
-//         totalPrice.innerText = currentPrice
-    
-//       }
-//       else{
-//         return
-//       }
-//     }
-//     const add = ()=>{
-//       let totalAddProduct = 1
-      
-//       currentCount = currentCount +1
-//       totalAddProduct = currentCount
-//       const currentPrice = parseInt(productPrice)*totalAddProduct + parseInt(delivaryPrice) 
-//       totalPrice.innerText = currentPrice
-//       totalCartProduct.innerText = currentCount  
-      
-//     }
-
 const calculateTotalPrice = () => {
 
   let total = 0
@@ -229,7 +214,14 @@ const calculateTotalPrice = () => {
 
   const deliveryCharge = parseInt(document.getElementById('delivarycharge').innerText)
   document.getElementById('productprice').innerText = total
-  document.getElementById('totalprice').innerText = total + deliveryCharge
+  if(total === 0){
+    document.getElementById('totalprice').innerText = 0
+  }
+  else{
+ document.getElementById('totalprice').innerText = total + deliveryCharge
+
+  }
+ 
 }
 
 const deleteProduct = (id) => {
